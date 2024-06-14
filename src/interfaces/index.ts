@@ -10,3 +10,9 @@ export interface IProduct {
     imageURL: string;
   };
 }
+export interface IInput {
+  id: string;
+  name: string;
+  label: string;
+  type: string;
+}
