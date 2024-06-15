@@ -12,7 +12,7 @@ export interface IProduct {
 }
 export interface IInput {
   id: string;
-  name: string;
+  name: "title" | "price" | "imageURL" | "description";
   label: string;
   type: string;
 }

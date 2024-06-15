@@ -4,24 +4,41 @@ import Modal from "./components/ui/Modal";
 import { formInputList, productList } from "./data";
 import Button from "./components/ui/Button";
 import Input from "./components/ui/Input";
+import { IProduct } from "./interfaces";
 
 const App = () => {
   /*______STATE_______*/
   const [isOpen, setIsOpen] = useState(false);
-
+  const [product, setProduct] = useState<IProduct>({
+    title: "",
+    description: "",
+    imageURL: "",
+    price: "",
+    colors: [],
+    category: {
+      name: "",
+      imageURL: "",
+    },
+  });
   /*______HANDKER_______*/
-  function closeModal() {
-    setIsOpen(false);
-  }
-  function openModal() {
-    setIsOpen(true);
-  }
+  const closeModal = () => setIsOpen(false);
+  const openModal = () => setIsOpen(true);
 
-  /*______RENDERS_______*/
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    
+    const { value, name } = e.target;
+    setProduct({
+      ...product,
+      [name]: value,
+      });
+      };
+      console.log(product);
+      /*______RENDERS_______*/
 
   const renderProductList = productList.map((product) => (
     <ProductCard key={product.id} product={product} />
   ));
+
   const renderFormInput = formInputList.map((input) => (
     <div className="flex flex-col" key={input.id}>
       <label
@@ -30,7 +47,13 @@ const App = () => {
       >
         {input.label}
       </label>
-      <Input type={input.type} id={input.id} name={input.name} />
+      <Input
+        type={input.type}
+        id={input.id}
+        name={input.name}
+        value={product[input.name]}
+        onChange={onChangeHandler}
+      />
     </div>
   ));
   return (
@@ -45,7 +68,7 @@ const App = () => {
         {renderProductList}
       </div>
       <Modal isOpen={isOpen} closeModal={closeModal} title="ADD A NEW PRODUCT">
-        <div className="space-y-3">
+        <form className="space-y-3">
           {renderFormInput}
           <div className="flex items-center space-x-3 my-2">
             <Button className="bg-indigo-700 hover:bg-indigo-800">
@@ -53,7 +76,7 @@ const App = () => {
             </Button>
             <Button className="bg-gray-400 hover:bg-gray-500">Cancel</Button>
           </div>
-        </div>
+        </form>
       </Modal>
     </main>
   );
