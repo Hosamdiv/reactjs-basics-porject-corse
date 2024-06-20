@@ -112,7 +112,7 @@ export const formInputList: IInput[] = [
   {
     id: "title",
     name: "title",
-    label: "Product",
+    label: "Product Title",
     type: "text",
   },
   {
