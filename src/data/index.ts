@@ -8,7 +8,7 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit commodi aliquid alias numquam dolorem similique magni eos maiores distinctio nesciunt soluta excepturi ea neque debitis accusantium, ratione aliquam ullam ipsam. ",
     imageURL: "/imges/image1.jpg",
-    price: "500000",
+    price: "5000000",
     colors: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
@@ -21,8 +21,8 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image2.jpg",
-    price: "500000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    price: "450000",
+    colors: ["#111", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image2.jpg",
@@ -34,7 +34,7 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image3.webp",
-    price: "500000",
+    price: "600000",
     colors: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
@@ -47,7 +47,7 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image4.jpg",
-    price: "500000",
+    price: "850000",
     colors: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
@@ -60,7 +60,7 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image5.jpg",
-    price: "500000",
+    price: "400000",
     colors: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
@@ -73,7 +73,7 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image6.jpg",
-    price: "500000",
+    price: "550000",
     colors: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
@@ -86,7 +86,7 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image7.jpg",
-    price: "500000",
+    price: "650000",
     colors: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
@@ -99,7 +99,7 @@ export const productList: IProduct[] = [
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image8.jpg",
-    price: "500000",
+    price: "350000",
     colors: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
@@ -133,4 +133,22 @@ export const formInputList: IInput[] = [
     label: "Product Price",
     type: "text",
   },
+];
+
+export const colors: string[] = [
+  "#a855f7",
+  "#2563eb",
+  "#84d2c5",
+  "#13005a",
+  "#a31acb",
+  "#ff6e31",
+  "#3c2a21",
+  "#6c4ab6",
+  "#cb1cbd",
+  "#000000",
+  "#645cbb",
+  "#1f8a70",
+  "#820000",
+  "#ff0032",
+  
 ];
