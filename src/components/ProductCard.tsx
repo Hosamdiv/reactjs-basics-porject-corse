@@ -9,10 +9,10 @@ interface IProps {
 }
 
 const ProductCard = ({ product }: IProps) => {
-  const { description, imageURL, title, category, colors } = product;
+  const { description, imageURL, title, category, colorList } = product;
 
   /*______RENDERS_______*/
-  const renderProductColors = colors.map((color) => (
+  const renderProductColors = colorList.map((color) => (
     <CircleColor key={color} color={color} />
   ));
 

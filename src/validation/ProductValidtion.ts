@@ -4,46 +4,53 @@
  * @returns
  */
 
-export const productValid = (product: {
+export const productValid = (prod: {
   title: string;
   description: string;
   imageURL: string;
   price: string;
+  errorColor: string;
 }) => {
   const errors: {
     title: string;
     description: string;
     imageURL: string;
     price: string;
+    errorColor: string;
   } = {
     title: "",
     description: "",
     imageURL: "",
     price: "",
+    errorColor: "",
   };
 
-  const validUrl = /^(ftp|http|https):\/\/[^ "]+$/.test(product.imageURL);
-  if (
-    !product.title.trim() ||
-    product.title.length < 10 ||
-    product.title.length > 80
-  ) {
+  const validColor = /^#([0-9A-F]{3}){1,2}$/i;
+
+  const validUrl = /^(ftp|http|https):\/\/[^ "]+$/.test(prod.imageURL);
+
+  if (!prod.title.trim() || prod.title.length < 10 || prod.title.length > 80) {
     errors.title = "Product title nust be between 10 ans 80 charactrs!";
   }
   if (
-    !product.description.trim() ||
-    product.description.length < 10 ||
-    product.description.length > 900
+    !prod.description.trim() ||
+    prod.description.length < 10 ||
+    prod.description.length > 900
   ) {
     errors.description =
       "Product description nust be between 10 ans 900 charactrs!";
   }
-  if (!product.imageURL.trim() || !validUrl) {
+
+  if (!prod.imageURL.trim() || !validUrl) {
     errors.imageURL = "Valid image URL is required";
   }
-  if (!product.price.trim() || isNaN(Number(product.price))) {
+
+  if (!prod.price.trim() || isNaN(Number(prod.price))) {
     errors.price = "Valid price is required!";
   }
 
+  if (!validColor.test(prod.errorColor)) {
+    errors.errorColor = "A valid color code is required!";
+  }
   return errors;
 };

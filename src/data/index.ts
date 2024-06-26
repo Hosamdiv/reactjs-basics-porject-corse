@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { IInput, IProduct } from "../interfaces";
+import { ICategory, IInput, IProduct } from "../interfaces";
 
 export const productList: IProduct[] = [
   {
@@ -9,7 +9,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit commodi aliquid alias numquam dolorem similique magni eos maiores distinctio nesciunt soluta excepturi ea neque debitis accusantium, ratione aliquam ullam ipsam. ",
     imageURL: "/imges/image1.jpg",
     price: "5000000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image1.jpg",
@@ -22,7 +22,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image2.jpg",
     price: "450000",
-    colors: ["#111", "#2563eb", "#ff6e31"],
+    colorList: ["#111", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image2.jpg",
@@ -35,7 +35,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image3.webp",
     price: "600000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image3.webp",
@@ -48,7 +48,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image4.jpg",
     price: "850000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image4.jpg",
@@ -61,7 +61,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image5.jpg",
     price: "400000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image5.jpg",
@@ -74,7 +74,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image6.jpg",
     price: "550000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image6.jpg",
@@ -87,7 +87,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image7.jpg",
     price: "650000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image7.jpg",
@@ -100,7 +100,7 @@ export const productList: IProduct[] = [
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
     imageURL: "/imges/image8.jpg",
     price: "350000",
-    colors: ["#ff0032", "#2563eb", "#ff6e31"],
+    colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
       name: "Cars",
       imageURL: "/imges/image8.jpg",
@@ -150,5 +150,48 @@ export const colors: string[] = [
   "#1f8a70",
   "#820000",
   "#ff0032",
-  
+];
+
+export const categories: ICategory[] = [
+  {
+    id: uuid(),
+    name: "Wade Cooper",
+    imageURL: "/imges/image1.jpg",
+  },
+  {
+    id: uuid(),
+    name: "Arlene Mccoy",
+    imageURL: "/imges/image2.jpg",
+  },
+  {
+    id: uuid(),
+    name: "Devon Webb",
+    imageURL: "/imges/image3.webp",
+  },
+
+  {
+    id: uuid(),
+    name: "Tanya Fox",
+    imageURL: "/imges/image4.jpg",
+  },
+  {
+    id: uuid(),
+    name: "Hellen Schmidt",
+    imageURL: "/imges/image5.jpg",
+  },
+  {
+    id: uuid(),
+    name: "Mason Heaney",
+    imageURL: "/imges/image6.jpg",
+  },
+  {
+    id: uuid(),
+    name: "Claudie Smitham",
+    imageURL: "/imges/image7.jpg",
+  },
+  {
+    id: uuid(),
+    name: "Emil Schaefer",
+    imageURL: "/imges/image8.jpg",
+  },
 ];

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/ui/Modal";
-import { colors, formInputList, productList } from "./data";
+import { categories, colors, formInputList, productList } from "./data";
 import Button from "./components/ui/Button";
 import Input from "./components/ui/Input";
 import { IProduct } from "./interfaces";
@@ -9,8 +9,7 @@ import { productValid } from "./validation/ProductValidtion";
 import ErrorMessage from "./validation/ErrorMessage";
 import CircleColor from "./components/CircleColor";
 import { v4 as uuid } from "uuid";
-
-
+import Select from "./components/ui/Select";
 
 const App = () => {
   const defaultProduct = {
@@ -18,7 +17,8 @@ const App = () => {
     description: "",
     imageURL: "",
     price: "",
-    colors: [],
+    errorColor: "",
+    colorList: [],
     category: {
       name: "",
       imageURL: "",
@@ -33,12 +33,19 @@ const App = () => {
     description: "",
     imageURL: "",
     price: "",
+    errorColor: "",
   });
-  
+
   const [products, setProducts] = useState<IProduct[]>(productList);
   const [product, setProduct] = useState<IProduct>(defaultProduct);
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
-  /*______HANDKER_______*/
+  /*______RENDERS_______*/
+  const renderProductList = products.map((product) => (
+    <ProductCard key={product.id} product={product} />
+  ));
+
+  /*______HANDLER_______*/
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
@@ -54,11 +61,6 @@ const App = () => {
     });
   };
 
-  /*______RENDERS_______*/
-  const renderProductList = products.map((product) => (
-    <ProductCard key={product.id} product={product} />
-  ));
-
   const onCancel = () => {
     setProduct(defaultProduct);
     closeModal();
@@ -66,33 +68,34 @@ const App = () => {
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const { title, description, imageURL, price } = product;
-    
+    const { title, description, imageURL, price, errorColor } = product;
     const errors = productValid({
       title,
       description,
       imageURL,
       price,
+      errorColor,
     });
-    
 
+    const hasErrorsMsg = Object.values(errors).some((val) => val !== "");
 
-    const hasErrorsMsg =
-      Object.values(errors).some((val) => val === "") &&
-      Object.values(errors).every((val) => val === "");
-      
-    if (!hasErrorsMsg) {
+    if (hasErrorsMsg) {
       setErrorState(errors);
       return;
     }
 
-    setProducts(prev => [{...product, id:uuid(), colors: tempColor}, ...prev]);
-    setTempColor([])
+    setProducts((prev) => [
+      {
+        ...product,
+        id: uuid(),
+        colorList: tempColor,
+        category: selectedCategory,
+      },
+      ...prev,
+    ]);
+    setTempColor([]);
     onCancel();
   };
-  console.log(products)
-  
-
 
   const renderFormInput = formInputList.map((input) => (
     <div className="flex flex-col" key={input.id}>
@@ -122,9 +125,20 @@ const App = () => {
           setTempColor(tempColor.filter((item) => item !== color));
           return;
         }
+
         setTempColor((prev) => [...prev, color]);
       }}
     />
+  ));
+
+  const tempColors = tempColor.map((color) => (
+    <span
+      key={color}
+      className="p-1 mr-1 mb-1 text-xs rounded-md text-white"
+      style={{ background: color }}
+    >
+      {color}
+    </span>
   ));
 
   return (
@@ -143,21 +157,46 @@ const App = () => {
       <Modal isOpen={isOpen} closeModal={closeModal} title="ADD A NEW PRODUCT">
         <form className="space-y-3" onSubmit={submitHandler}>
           {renderFormInput}
+          <Select
+            selected={selectedCategory}
+            setSelected={setSelectedCategory}
+          />
+
           <div className="flex items-center flex-wrap my-4 space-x-1">
             {renderProductColors}
           </div>
 
+
+
+
+
+
+
+
+
           <div className="flex items-center flex-wrap my-4 space-x-1">
-            {tempColor.map((colors) => (
-              <span
-                key={colors}
-                className="p-1 mr-1 mb-1 text-xs rounded-md text-white"
-                style={{ background: colors }}
-              >
-                {colors}
-              </span>
-            ))}
+            {tempColors}
+            <span>
+              <ErrorMessage msg={errorState.errorColor} />
+            </span>
           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <div className="flex items-center space-x-3 my-2">
             <Button className="bg-indigo-700 hover:bg-indigo-800">
               Submit
@@ -176,5 +215,3 @@ const App = () => {
 };
 
 export default App;
-
-
