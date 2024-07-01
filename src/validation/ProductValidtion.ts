@@ -9,25 +9,25 @@ export const productValid = (prod: {
   description: string;
   imageURL: string;
   price: string;
-  errorColor: string;
+  // errorColor: string;
 }) => {
   const errors: {
     title: string;
     description: string;
     imageURL: string;
     price: string;
-    errorColor: string;
+    // errorColor: string;
   } = {
     title: "",
     description: "",
     imageURL: "",
     price: "",
-    errorColor: "",
+    // errorColor: "",
   };
 
-  const validColor = /^#([0-9A-F]{3}){1,2}$/i;
+  // const validColor = /^#([0-9A-F]{3}){1,2}$/i;
 
-  const validUrl = /^(ftp|http|https):\/\/[^ "]+$/.test(prod.imageURL);
+  const validUrl = /^\/image\/[^ "]+$/.test(prod.imageURL);
 
   if (!prod.title.trim() || prod.title.length < 10 || prod.title.length > 80) {
     errors.title = "Product title nust be between 10 ans 80 charactrs!";
@@ -49,8 +49,8 @@ export const productValid = (prod: {
     errors.price = "Valid price is required!";
   }
 
-  if (!validColor.test(prod.errorColor)) {
-    errors.errorColor = "A valid color code is required!";
-  }
+  // if (!validColor.test(prod.errorColor)) {
+  //   errors.errorColor = "A valid color code is required!";
+  // }
   return errors;
 };

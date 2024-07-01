@@ -7,12 +7,12 @@ export const productList: IProduct[] = [
     title: "2022 Genesis GV70: Nomine",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit commodi aliquid alias numquam dolorem similique magni eos maiores distinctio nesciunt soluta excepturi ea neque debitis accusantium, ratione aliquam ullam ipsam. ",
-    imageURL: "/imges/image1.jpg",
+    imageURL: "/image/image1.jpg",
     price: "5000000",
     colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image1.jpg",
+      name: "Cars1",
+      imageURL: "/image/image1.jpg",
     },
   },
   {
@@ -20,12 +20,12 @@ export const productList: IProduct[] = [
     title: "Chevrolet Spark. 995cc Petrol",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
-    imageURL: "/imges/image2.jpg",
+    imageURL: "/image/image2.jpg",
     price: "450000",
     colorList: ["#111", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image2.jpg",
+      name: "Cars2",
+      imageURL: "/image/image2.jpg",
     },
   },
   {
@@ -33,12 +33,12 @@ export const productList: IProduct[] = [
     title: "Chevrolet Spark. 995cc Petrol",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
-    imageURL: "/imges/image3.webp",
+    imageURL: "/image/image3.webp",
     price: "600000",
     colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image3.webp",
+      name: "Cars3",
+      imageURL: "/image/image3.webp",
     },
   },
   {
@@ -46,12 +46,12 @@ export const productList: IProduct[] = [
     title: "Chevrolet Spark. 995cc Petrol",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
-    imageURL: "/imges/image4.jpg",
+    imageURL: "/image/image4.jpg",
     price: "850000",
     colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image4.jpg",
+      name: "Cars4",
+      imageURL: "/image/image4.jpg",
     },
   },
   {
@@ -59,12 +59,12 @@ export const productList: IProduct[] = [
     title: "Chevrolet Spark. 995cc Petrol",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
-    imageURL: "/imges/image5.jpg",
+    imageURL: "/image/image5.jpg",
     price: "400000",
     colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image5.jpg",
+      name: "Cars5",
+      imageURL: "/image/image5.jpg",
     },
   },
   {
@@ -72,12 +72,12 @@ export const productList: IProduct[] = [
     title: "Chevrolet Spark. 995cc Petrol",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
-    imageURL: "/imges/image6.jpg",
+    imageURL: "/image/image6.jpg",
     price: "550000",
     colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image6.jpg",
+      name: "Cars6",
+      imageURL: "/image/image6.jpg",
     },
   },
   {
@@ -85,12 +85,12 @@ export const productList: IProduct[] = [
     title: "Chevrolet Spark. 995cc Petrol",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
-    imageURL: "/imges/image7.jpg",
+    imageURL: "/image/image7.jpg",
     price: "650000",
     colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image7.jpg",
+      name: "Cars7",
+      imageURL: "/image/image7.jpg",
     },
   },
   {
@@ -98,12 +98,12 @@ export const productList: IProduct[] = [
     title: "Chevrolet Spark. 995cc Petrol",
     description:
       "As luxury brands go, South Korea,s Gemesis is still in its infancy, having sold its first cars (as an indepr)",
-    imageURL: "/imges/image8.jpg",
+    imageURL: "/image/image8.jpg",
     price: "350000",
     colorList: ["#ff0032", "#2563eb", "#ff6e31"],
     category: {
-      name: "Cars",
-      imageURL: "/imges/image8.jpg",
+      name: "Cars8",
+      imageURL: "/image/image8.jpg",
     },
   },
 ];
@@ -156,42 +156,42 @@ export const categories: ICategory[] = [
   {
     id: uuid(),
     name: "Wade Cooper",
-    imageURL: "/imges/image1.jpg",
+    imageURL: "/image/image1.jpg",
   },
   {
     id: uuid(),
     name: "Arlene Mccoy",
-    imageURL: "/imges/image2.jpg",
+    imageURL: "/image/image2.jpg",
   },
   {
     id: uuid(),
     name: "Devon Webb",
-    imageURL: "/imges/image3.webp",
+    imageURL: "/image/image3.webp",
   },
 
   {
     id: uuid(),
     name: "Tanya Fox",
-    imageURL: "/imges/image4.jpg",
+    imageURL: "/image/image4.jpg",
   },
   {
     id: uuid(),
     name: "Hellen Schmidt",
-    imageURL: "/imges/image5.jpg",
+    imageURL: "/image/image5.jpg",
   },
   {
     id: uuid(),
     name: "Mason Heaney",
-    imageURL: "/imges/image6.jpg",
+    imageURL: "/image/image6.jpg",
   },
   {
     id: uuid(),
     name: "Claudie Smitham",
-    imageURL: "/imges/image7.jpg",
+    imageURL: "/image/image7.jpg",
   },
   {
     id: uuid(),
     name: "Emil Schaefer",
-    imageURL: "/imges/image8.jpg",
+    imageURL: "/image/image8.jpg",
   },
 ];

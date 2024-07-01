@@ -1,10 +1,12 @@
+import { ProductNameTypes } from "../types";
+
 export interface IProduct {
-  id?: string | undefined;
+  id?: string;
   title: string;
   description: string;
   imageURL: string;
   price: string;
-  errorColor: string;
+  // errorColor: string;
   colorList: string[];
   category: {
     name: string;
@@ -14,7 +16,7 @@ export interface IProduct {
 
 export interface IInput {
   id: string;
-  name: "title" | "price" | "imageURL" | "description";
+  name: ProductNameTypes;
   label: string;
   type: string;
 }

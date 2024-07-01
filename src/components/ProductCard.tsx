@@ -6,16 +6,39 @@ import Button from "./ui/Button";
 
 interface IProps {
   product: IProduct;
+  serProductEdit: (prduct: IProduct) => void;
+  openEditModal: () => void;
+  idx: number;
+  setProductEditIdx: (value: number) => void;
+  openConfirmModal: () => void;
 }
 
-const ProductCard = ({ product }: IProps) => {
-  const { description, imageURL, title, category, colorList } = product;
+const ProductCard = ({
+  product,
+  serProductEdit,
+  openEditModal,
+  idx,
+  setProductEditIdx,
+  openConfirmModal,
+}: IProps) => {
+  const { title, description, imageURL, price, category, colorList } = product;
 
   /*______RENDERS_______*/
   const renderProductColors = colorList.map((color) => (
     <CircleColor key={color} color={color} />
   ));
+  /*______HANDLER_______*/
+  const onEdit = () => {
+    serProductEdit(product);
+    openEditModal();
+    setProductEditIdx(idx);
+  };
+  
+  const onRemove = () => {
+    serProductEdit(product);
 
+    openConfirmModal();
+  };
   return (
     <div className="max-w-sm md:max-w-lg mx-auto md:mx-0 border rounded-md p-2 flex flex-col space-y-2">
       <Image
@@ -33,18 +56,25 @@ const ProductCard = ({ product }: IProps) => {
       </div>
 
       <div className="flex items-center justify-between">
-        <span>$500.000</span>
+        <span>${price}</span>
         <Image
           imageURL={category.imageURL}
           alt={category.name}
           className="w-10 h-10 rounded-full object-contain"
         />
       </div>
+
       <div className="flex items-center justify-between space-x-2 mt-5">
-        <Button className="bg-indigo-700 hover:bg-indigo-800" width="w-full">
+        <Button
+          onClick={onEdit}
+          className="bg-indigo-700 hover:bg-indigo-800"
+          width="w-full"
+        >
           EDIT
         </Button>
-        <Button className="bg-red-700 hover:bg-red-800">DELETE</Button>
+        <Button className="bg-[#c2344d] hover:bg-red-800" onClick={onRemove}>
+          Remove
+        </Button>
       </div>
     </div>
   );
