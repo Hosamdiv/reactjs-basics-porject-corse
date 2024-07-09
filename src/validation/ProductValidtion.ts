@@ -4,28 +4,21 @@
  * @returns
  */
 
-export const productValid = (prod: {
+interface IValid {
   title: string;
   description: string;
   imageURL: string;
   price: string;
-  // errorColor: string;
-}) => {
-  const errors: {
-    title: string;
-    description: string;
-    imageURL: string;
-    price: string;
-    // errorColor: string;
-  } = {
+}
+
+export const productValid = (prod: IValid) => {
+  const errors: IValid = {
     title: "",
     description: "",
     imageURL: "",
     price: "",
-    // errorColor: "",
   };
 
-  // const validColor = /^#([0-9A-F]{3}){1,2}$/i;
 
   const validUrl = /^\/image\/[^ "]+$/.test(prod.imageURL);
 
@@ -49,8 +42,6 @@ export const productValid = (prod: {
     errors.price = "Valid price is required!";
   }
 
-  // if (!validColor.test(prod.errorColor)) {
-  //   errors.errorColor = "A valid color code is required!";
-  // }
+
   return errors;
 };

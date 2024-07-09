@@ -6,7 +6,6 @@ export interface IProduct {
   description: string;
   imageURL: string;
   price: string;
-  // errorColor: string;
   colorList: string[];
   category: {
     name: string;

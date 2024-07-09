@@ -36,6 +36,7 @@ const App = () => {
     description: "",
     imageURL: "",
     price: "",
+    colorList: [],
   });
 
   const [products, setProducts] = useState<IProduct[]>(productList);
@@ -82,29 +83,25 @@ const App = () => {
     closeModal();
   };
 
-
-
   const removeProductHandler = () => {
     const filtered = products.filter((prod) => prod.id !== productEdit.id);
     setProducts(filtered);
     closeConfirmModal();
 
-  
     toast("Product has been deleted", {
       icon: "👏",
       style: {
         background: "#000",
         color: "#fff",
-        padding: "15px"
-      }
+        padding: "15px",
+      },
     });
   };
 
-
-
   const submitHandler = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const { title, description, imageURL, price } = product;
+    const { title, description, imageURL, price }
+    = product;
     const errors = productValid({
       title,
       description,
@@ -138,8 +135,8 @@ const App = () => {
       style: {
         background: "#000",
         color: "#fff",
-        padding: "15px"
-      }
+        padding: "15px",
+      },
     });
   };
 
@@ -151,6 +148,7 @@ const App = () => {
       description,
       imageURL,
       price,
+      
     });
 
     const hasErrorsMsg = Object.values(errors).some((val) => val !== "");
@@ -174,8 +172,8 @@ const App = () => {
       style: {
         background: "#000",
         color: "#fff",
-        padding: "15px"
-      }
+        padding: "15px",
+      },
     });
   };
 
