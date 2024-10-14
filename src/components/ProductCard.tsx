@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+import { memo } from "react";
 import { txtSlicer } from "../functions/functions";
 import { IProduct } from "../interfaces";
 import CircleColor from "./CircleColor";
@@ -6,7 +8,7 @@ import Button from "./ui/Button";
 
 interface IProps {
   product: IProduct;
-  serProductEdit: (prduct: IProduct) => void;
+  setProductEdit: (prduct: IProduct) => void;
   openEditModal: () => void;
   idx: number;
   setProductEditIdx: (value: number) => void;
@@ -15,7 +17,7 @@ interface IProps {
 
 const ProductCard = ({
   product,
-  serProductEdit,
+  setProductEdit: setProductEdit,
   openEditModal,
   idx,
   setProductEditIdx,
@@ -29,13 +31,13 @@ const ProductCard = ({
   ));
   /*______HANDLER_______*/
   const onEdit = () => {
-    serProductEdit(product);
+    setProductEdit(product);
     openEditModal();
     setProductEditIdx(idx);
   };
-  
+
   const onRemove = () => {
-    serProductEdit(product);
+    setProductEdit(product);
 
     openConfirmModal();
   };
@@ -80,4 +82,4 @@ const ProductCard = ({
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);

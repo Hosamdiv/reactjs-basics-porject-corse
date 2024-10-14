@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/ui/Modal";
 import { categories, colors, formInputList, productList } from "./data";
@@ -50,10 +50,10 @@ const App = () => {
   const openModal = () => setIsOpen(true);
 
   const closeEditModal = () => setIsOpenEdit(false);
-  const openEditModal = () => setIsOpenEdit(true);
+  const openEditModal = useCallback(() => setIsOpenEdit(true), []);
 
   const closeConfirmModal = () => setIsOpenComfirmModal(false);
-  const openConfirmModal = () => setIsOpenComfirmModal(true);
+  const openConfirmModal = useCallback(() => setIsOpenComfirmModal(true), []);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -100,8 +100,7 @@ const App = () => {
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const { title, description, imageURL, price }
-    = product;
+    const { title, description, imageURL, price } = product;
     const errors = productValid({
       title,
       description,
@@ -148,7 +147,6 @@ const App = () => {
       description,
       imageURL,
       price,
-      
     });
 
     const hasErrorsMsg = Object.values(errors).some((val) => val !== "");
@@ -181,7 +179,7 @@ const App = () => {
     <ProductCard
       key={product.id}
       product={product}
-      serProductEdit={setProductEdit}
+      setProductEdit={setProductEdit}
       openEditModal={openEditModal}
       idx={idx}
       setProductEditIdx={setProductEditIdx}
