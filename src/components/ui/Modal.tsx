@@ -1,5 +1,6 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, ReactNode } from "react";
+import { Fragment, memo, ReactNode } from "react";
 
 interface IProps {
   isOpen: boolean;
@@ -8,12 +9,12 @@ interface IProps {
   children: ReactNode;
 }
 
-const Modal = ({ isOpen, closeModal, title, children  }: IProps) => {
+const Modal = ({ isOpen, closeModal, title, children }: IProps) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          <div className="fixed inset-0 backdrop-blur-sm" aria-hidden="true"/>
+          <div className="fixed inset-0 backdrop-blur-sm" aria-hidden="true" />
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -26,11 +27,6 @@ const Modal = ({ isOpen, closeModal, title, children  }: IProps) => {
             <div className="fixed inset-0 bg-black/25" />
           </Transition.Child>
 
-          
-          
-          
-          
-          
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
@@ -62,4 +58,4 @@ const Modal = ({ isOpen, closeModal, title, children  }: IProps) => {
     </>
   );
 };
-export default Modal;
+export default memo(Modal);

@@ -1,7 +1,9 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Listbox } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { categories } from "../../data"; // Adjust the path if necessary
 import { ICategory } from "../../interfaces";
+import { memo } from "react";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -90,4 +92,4 @@ const Select = ({ selected, setSelected }: IProps) => {
   );
 };
 
-export default Select;
+export default memo(Select);
